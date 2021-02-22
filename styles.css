@@ -244,7 +244,7 @@
     -moz-text-fill-color: transparent;
 }
 
-/*.main__content p {
+.main__content p {
     font-size: 1rem;
     background-color: #00DDDD;
     background-image: linear-gradient(to top, #0000EE 0%, #00DDDD 100%);
@@ -253,4 +253,10 @@
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-}*/
+}
+
+.main__btn {
+    font-size: 1rem;
+    background-image: linear-gradient(to top, #0000EE 0%, #00DDDD 100%);
+    padding: 14px 32px;
+}
