@@ -2,50 +2,63 @@
 <html>
 <style>
 .btn-group button {
-  background-color: #acb8ac; /* Green background */
-  border: 1px solid rgb(22, 87, 22); /* Green border */
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  width: 50%; /* Set a width if needed */
-  display: block; /* Make the buttons appear below each other */
+  background-color: #acb8ac; 
+  border: 1px solid rgb(22, 87, 22); 
+  color: white; 
+  padding: 10px 24px; 
+  cursor: pointer; 
+  width: 50%; 
+  display: block; 
 }
 
 .btn-group button:not(:last-child) {
-  border-bottom: none; /* Prevent double borders */
+  border-bottom: none; 
 }
 
-/* Add a background color on hover */
+
 .btn-group button:hover {
   background-color: #3e8e41;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
 </style>
 <body>
+  <ul>
+    <li><a href="Home.html">Home</a></li>
+    <li><a href="https://www.gov.uk/register-to-vote">Register to Vote</a></li>
+    <li><a href="wgittivitefor,html">Who Can I Vote For?</a></li>
+    <li><a href="https://votingcounts.org.uk/senedd">About the Senedd Elections</a></li>
+  </ul>
+  
   <nav class="navbar">
     <div class="navbar__container">
-      <!-- <a href="/" id="navbar__logo"><i class="fas fa-gem"></i><i class="fasfa-gem"></i> Who Shall I Vote For Quiz</a> -->
       <a href="/" id="navbar__logo"><img class="img-main-logo" src="images/WEAll Wales Logo_4_colour.png" alt="Main Logo"> 
       <div class="navbar__toggle" id="mobile-menu">
-        <span class="bar"></span> <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="navbar__menu">
-        <li class="navbar__item">
-          <a href="/" class="navbar__links">Home</a>
-        </li>
-        <!-- <li class="navbar__item">
-          <a href="/tech.html" class="navbar__links">Tech</a>
-        </li> -->
-        <li class="navbar__item">
-          <a href="/info.html" class="navbar__links">How to Vote</a>
-        </li>
-        <li class="navbar__item">
-          <a href="/info.html" class="navbar__links">About</a>
-        </li>
-        <!-- <li class="navbar__btn"><a href="/auth.html" class="button">Sign Up</a></li> -->
-      </ul>
-    </div>
-  </nav><h1>Areas of Wellbeing</h1>
+  </nav>
+  
+  <h1>Areas of Wellbeing</h1>
   <text>Select a minimum of three arease that are impotant to you</text>
 
 <div class="btn-group">
