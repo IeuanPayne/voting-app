@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>var questionArray = [
+    ["I want there to be many more businesses in my community that are owned and managed locally", 
+    "Answer 1", 
+    "Answer 2", 
+    "Answer 3"], 
+    ["I want there to be many more businesses in my community that are owned and managed locally", "Blue", "Green", "Red"], 
+    ["I want there to be many more businesses in my community that are owned and managed locally?", "Horse", "Cat", "Dog"]
+  ];
+  
+  //populate document
+  for (var i = 0; i < questionArray.length; i++){
+    document.write("<form><span class='question'>" + questionArray[i][0] + "</span><br>");
+    for (var x = 1; x < 4; x++){
+      document.write("<input type='radio' class='answer' name='answer' value='" + questionArray[i][x] + "'>" + questionArray[i][x] + "");
+    }
+    document.write("</form><br>");
+  }
+  
+  var characterAnswer = [
+    [0, 0, 0,'John'],
+    [0, 0, 1,'Mary'],
+    [1, 1, 1,'Suzan'],
+    [1, 1, 2,'Mark'],
+    [2, 2, 2,'Lennon']
+  ];
+  
+  //add click check event listeners
+  var inputs = document.getElementsByTagName('input');
+  for(var i = 0; i < inputs.length; i++){
+    inputs[i].addEventListener('click', check);
+  }
+  
+  var userAnswers = [];
+  
+  //check questions answers
+  function check(){
+    userAnswers = [];
+    var c = 0;
+    for(var i = 0; i < inputs.length; i++){
+      if(inputs[i].checked) {
+        userAnswers.push(i%3);
+        c++;
+      }
+    }
+    if(c==questionArray.length) rate();
+  }
+  
+  //rate the answers per char
+  function rate(){
+    console.log(userAnswers);
+    for(var i = 0; i < userAnswers.length; i++){
+      for(var j = 0; j < characterAnswer.length; j++){
+        characterAnswer[j][4] = 0;
+        for(var x = 0; x < 4; x++){
+          if(userAnswers[i] == characterAnswer[j][x])
+            characterAnswer[j][4]++;
+        }
+      }
+    }
+    answer();
+  }</script>
