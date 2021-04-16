@@ -1,0 +1,84 @@
+<!Doctype html>
+<html>
+  <link rel="stylesheet" href="Styling.css"</link>
+  <link rel="stylesheet" href="/images/langcss.css"</link>
+  <ul>
+    
+    <li><a id="Cym"Homee href="Home.html"> </a></li>
+    <li><a href="https://www.gov.uk/register-to-vote" target="_blank">Register to Vote</a></li>
+    <li><a href="Whotovotefor.html">Who Can I Vote For?</a></li>
+    <li><a href="https://votingcounts.org.uk/senedd" target="_blank">About the Senedd Elections</a></li>
+    
+  </ul>
+<br>
+<div class="box"> 
+  <img src="images/image1.jpg"/> 
+</div>
+
+
+
+<ul class="social">
+  <li id="cy_click" class="button_lang current_lang">Cy</li>
+  <li id="en_click" class="button_lang">En</li>
+      </ul>
+
+<h1 id="cy">Texte en Cymraag</h1>
+<h1 id="en">Text in English</h1>
+      
+<h2>See which parties are promising on the things that matter to us. 
+<br>
+<br>
+All the statements link to the seven areas of “wellbeing” defined in Welsh law, the <a href="https://www.futuregenerations.wales/about-us/future-generations-act/" target="_blank">Wellbeing of Future Genrations Act</a>. Whatever party wins the election, their government is
+legally bound by this law.<br>
+
+
+
+
+
+
+      <Script>
+var welsh = document.getElementById('cy_click'),
+    english = document.getElementById('en_click'),
+    cy_txt = document.querySelectorAll('#cy'),
+    en_txt = document.querySelectorAll('#en'),
+    nb_cy = cy_txt.length,
+    nb_en = en_txt.length;
+
+welsh.addEventListener('click', function() {
+    langue(welsh,english);
+}, false);
+
+english.addEventListener('click', function() {
+    langue(english,welsh);
+}, false);
+
+function langue(langueOn,langueOff){
+    if (!langueOn.classList.contains('current_lang')) {
+        langueOn.classList.toggle('current_lang');
+        langueOff.classList.toggle('current_lang');
+    }
+    if(langueOn.innerHTML == 'cy'){
+        afficher(cy_txt, nb_cy);
+        cacher(en_txt, nb_en);
+    }
+    else if(langueOn.innerHTML == 'En'){
+        afficher(en_txt, nb_en);
+        cacher(cy_txt, nb_cy);
+    }
+}
+
+function afficher(txt,nb){
+    for(var i=0; i < nb; i++){
+        txt[i].style.display = 'block';
+    }
+}
+function cacher(txt,nb){
+    for(var i=0; i < nb; i++){
+        txt[i].style.display = 'none';
+    }
+}
+function init(){
+    langue(french,english);
+}
+init();  
+</Script>
